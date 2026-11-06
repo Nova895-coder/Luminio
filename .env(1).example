@@ -1,0 +1,41 @@
+# ---- Luminio AI backend configuration ----
+# NEVER commit your real .env file. Copy this to .env and fill in values.
+
+PORT=3000
+PUBLIC_URL=http://localhost:3000
+
+# Gemini API key (backend only - never expose to the browser)
+GEMINI_API_KEY=
+
+# Google OAuth client ID used to verify Google Sign-In ID tokens
+GOOGLE_CLIENT_ID=
+
+# Private admin secret. Typed by admins at runtime, stored ONLY here.
+# Generate with: openssl rand -hex 32
+ADMIN_SECRET=
+
+# Vision model used when users attach images
+VISION_MODEL=gemini-2.0-flash
+
+# Model mapping: Luminio model id -> actual Gemini model name.
+# Update these when Google releases/renames models. Unknown names fail loudly
+# at request time so we never pretend a model exists.
+MODEL_LUMINIO_2=gemini-2.0-flash
+MODEL_LUMINIO_3=gemini-2.5-flash
+MODEL_LUMINIO_5=gemini-2.5-pro
+
+# Daily message limits per plan per model (backend-enforced)
+FREE_DAILY_LUMINIO_2=50
+FREE_DAILY_LUMINIO_3=20
+FREE_DAILY_LUMINIO_5=5
+PRO_DAILY_LUMINIO_2=1000
+PRO_DAILY_LUMINIO_3=500
+PRO_DAILY_LUMINIO_5=200
+
+# Session lifetime in days
+SESSION_DAYS=30
+
+# Optional: Stripe payments (leave empty to disable checkout)
+STRIPE_SECRET_KEY=
+STRIPE_PRICE_ID=
+STRIPE_WEBHOOK_SECRET=
